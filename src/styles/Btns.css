@@ -1,0 +1,25 @@
+.container-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+button {
+    min-width: 150px;
+    cursor: pointer;
+    height: 30px;
+    text-transform: capitalize;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+button:hover {
+background-color: rgb(231, 232, 236);
+color: black;
+}
