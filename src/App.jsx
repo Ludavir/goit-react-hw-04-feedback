@@ -44,9 +44,9 @@ const App = () => {
       <TittleMain textTittle="Please leave feeback" />
       <Btns
       textBtn={key}
-      manajerClickGood={manajerClickGood.bind(this)}
-      manajerClickNeutral={manajerClickNeutral.bind(this)}
-      manajerClickBad={manajerClickBad.bind(this)} />
+      manajerClickGood={manajerClickGood}
+      manajerClickNeutral={manajerClickNeutral}
+      manajerClickBad={manajerClickBad} />
 
       {this.countTotalFeedback() === 0 ?
       <Notificacion textNotification="There is no feedback"/> : 
