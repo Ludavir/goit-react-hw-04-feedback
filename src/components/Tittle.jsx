@@ -1,9 +1,9 @@
 import React from "react";
 
-const TittleMain = () => {
+const TittleMain = ({textTittle}) => {
     return (
         <div className="text-tittle">
-            <h1>Please leave feeback</h1>
+            <h1>{textTittle}</h1>
         </div>
     )
 }
