@@ -4,9 +4,10 @@ import TittleMain from "./components/Tittle";
 import Btns from "./components/Btns";
 import Statistics from "./components/Statistics";
 import Notificacion from "./components/Notification";
+import { useState } from 'react';
 
 const App = () => {
-  state = {
+  const state = {
     good: 0,
     neutral: 0,
     bad: 0
@@ -40,22 +41,22 @@ const App = () => {
 
   return(
     <div className="App">
-    <TittleMain textTittle="Please leave feeback" />
-    <Btns
-    textBtn={key}
-    manajerClickGood={manajerClickGood.bind(this)}
-    manajerClickNeutral={manajerClickNeutral.bind(this)}
-    manajerClickBad={manajerClickBad.bind(this)} />
+      <TittleMain textTittle="Please leave feeback" />
+      <Btns
+      textBtn={key}
+      manajerClickGood={manajerClickGood.bind(this)}
+      manajerClickNeutral={manajerClickNeutral.bind(this)}
+      manajerClickBad={manajerClickBad.bind(this)} />
 
-    {this.countTotalFeedback() === 0 ?
-    <Notificacion textNotification="There is no feedback"/> : 
-    <Statistics
-    good={good}
-    neutral={neutral}
-    bad={bad}
-    total={countTotalFeedback}
-    positiveTotal={countPositiveFeedbackPercentage} />
-    }
+      {this.countTotalFeedback() === 0 ?
+      <Notificacion textNotification="There is no feedback"/> : 
+      <Statistics
+      good={good}
+      neutral={neutral}
+      bad={bad}
+      total={countTotalFeedback}
+      positiveTotal={countPositiveFeedbackPercentage} />
+      }
   </div>
   )
 }
