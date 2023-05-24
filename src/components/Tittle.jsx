@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const TittleMain = ({textTittle}) => {
     return (
@@ -6,6 +7,10 @@ const TittleMain = ({textTittle}) => {
             <h1>{textTittle}</h1>
         </div>
     )
+}
+
+TittleMain.propTypes = {
+    textTittle : PropTypes.string.isRequired,
 }
 
 export default TittleMain
