@@ -1,12 +1,17 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import '../styles/Notification.css'
 
-const Notificacion = (props) => {
+const Notificacion = ({textNotification}) => {
     return (
         <div className="notify">
-            <p className="notify">{props.textNotification}</p>
+            <p className="notify">{textNotification}</p>
         </div>
     )
+}
+
+Notificacion.propTypes = {
+    textNotification : PropTypes.string.isRequired,
 }
 
 export default Notificacion 
