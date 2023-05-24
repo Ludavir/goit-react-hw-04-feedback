@@ -18,24 +18,26 @@ const App = () => {
 
   const [numClicksGood, setNumClicksGood] = useState (good);
   const manajerClickGood = () => {
-    setNumClicksGood(numClicksGood + 1); 
+    setNumClicksGood(numClicksGood + 1);
   };
+
   const [numClicksNeutral, setNumClicksNeutral] = useState (neutral);
   const manajerClickNeutral = () => {
     setNumClicksNeutral(numClicksNeutral + 1); 
   };
+
   const [numClicksBad, setNumClicksBad] = useState (bad);
   const manajerClickBad = () => {
     setNumClicksBad(numClicksBad + 1); 
   };
 
   const countTotalFeedback = () => {
-    let total = state.good + state.neutral + state.bad;
+    let total = numClicksGood + numClicksNeutral + numClicksBad;
     return total
   };
 
   const countPositiveFeedbackPercentage = () => {
-    let totalPositiveFeedback = Math.round((state.good/countTotalFeedback)*100) + "%";
+    let totalPositiveFeedback = Math.round((numClicksGood/countTotalFeedback())*100) + "%";
     return totalPositiveFeedback
   };
 
@@ -47,14 +49,15 @@ const App = () => {
       manajerClickGood={manajerClickGood}
       manajerClickNeutral={manajerClickNeutral}
       manajerClickBad={manajerClickBad} />
-      {countTotalFeedback === 0 ?
+      {countTotalFeedback() === 0 ?
       <Notificacion textNotification="There is no feedback"/> : 
       <Statistics
-      good={good}
-      neutral={neutral}
-      bad={bad}
-      total={countTotalFeedback}
-      positiveTotal={countPositiveFeedbackPercentage} />
+      good={numClicksGood}
+      neutral={numClicksNeutral}
+      bad={numClicksBad}
+      total={countTotalFeedback()}
+      positiveTotal={countPositiveFeedbackPercentage()} 
+      />
       }
   </div>
   )
